@@ -3,6 +3,7 @@ require 'memoist' #adding memoization module
 
 extend Memoist #function from memoist library
 
+# recursive Fibonacci method with caching
 # 0 1 1 2 3 5 8 ...
 def fib(n)
   if n < 0
