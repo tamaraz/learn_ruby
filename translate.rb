@@ -12,15 +12,22 @@ def tr(from, to, str)
     translate[from[i]] = to[i]
   end
 
-  output = ""
-  str.each_char do |char|
-    if (translate.key?(char))
-      output << translate[char]
-    else
-      output << char
+  # str.each_char do |char|
+  #   if (translate.key?(char))
+  #     output << translate[char]
+  #   else
+  #     output << char
+  #   end
+  # end
+  # puts output
+
+  #modify str in-place
+  (0..str.size-1).each do |i|
+    if (translate.key?(str[i]))
+      str[i] = translate[str[i]]
     end
   end
-  puts output
+  puts str
 end
 
 #tr("abc","123","dcba") => "d321"
